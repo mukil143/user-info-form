@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User form</title>
+
+</head>
+
+<body>
+    <style>
+        #userform {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        #usertable {
+            border-collapse: collapse;
+        }
+
+        #usertable th {
+            padding: 5px;
+        }
+
+        #usertable tbody tr{
+            background-color: #adff2f;
+        }
+
+        #cbtn{
+            background-color: red;
+            display: none;
+        }
+
+
+    </style>
+    <section id="head">
+        <h1 class="head__title">User Information</h1>
+        <form id="userform">
+            <div class="userdetails">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="userdetails">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div class="userdetails">
+                <label for="phonenum">Phone No:</label>
+                <input type="tel" id="phonenum" name="phonenum" required>
+            </div>
+            <div class="userdetails">
+                <label for="dob">Date Of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+
+            </div>
+            <div class="userdetails">
+                <label for="gender">Gender:</label>
+                <select name="gender" id="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">FeMale</option>
+                </select>
+            </div>
+            <div class="userdetails">
+                <label >Hobbies:</label>
+                <div class="hobbies">
+                    <input type="checkbox" id="Programming" name="hobbies" value="Programming">
+                    <label for="coding">Programming</label>
+
+                    <input type="checkbox" id="reading" name="hobbies" value="Reading">
+                    <label for="reading">Reading</label>
+
+                    <input type="checkbox" id="travelling" name="hobbies" value="Travelling">
+                    <label for="travelling">Travelling</label>
+                </div>
+
+            </div>
+            <div class="userdetails">
+                <label >Education:</label>
+                <div class="education">
+                    <input type="radio" name="education" id="highschool" value="HSLC">
+                    <label for="highschool">HSLC</label>
+    
+                    <input type="radio" name="education" id="bacholer" value="Bacholer's UG">
+                    <label for="bacholer">Bacholer's UG</label>
+    
+                    <input type="radio" name="education" id="master's PG" value="HSLC">
+                    <label for="master's PG">Master's PG</label>
+                </div>
+
+                
+            </div>
+
+            <div class="userdetails">
+                <label for="address">Address:</label>
+                <textarea name="address" id="address" required></textarea>
+            </div>
+
+            <div class="userdetails">
+                <input name="submitbtn" type="submit" id="sumbtn">
+                <button id="cbtn">Cancel</button>
+            </div>
+        </form>
+    </section>
+    <br>
+    <section id="body">
+        <h1>User Table</h1>
+        <table id="usertable" border="1">
+            <thead>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone No</th>
+                <th>DOB</th>
+                <th>Gender</th>
+                <th>Hobbies</th>
+                <th>Education</th>
+                <th>Address</th>
+                <th>Action</th>
+            </thead>
+
+            <tbody>
+
+            </tbody>
+        </table>
+    </section>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
