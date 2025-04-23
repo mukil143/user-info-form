@@ -43,11 +43,15 @@ userform.addEventListener("submit", function (event) {
         currentRow.cells[6].innerText = userdetails.hobbies;
         currentRow.cells[7].innerText = userdetails.education;
         currentRow.cells[8].innerText = userdetails.address;
+        currentRow.style.backgroundColor=""; //change the row color to default color 
         currentRow = null; // Reset currentRow
 
         formMode="create";//change the formmode to create
 
         userform.querySelector("input[type='submit']").value="Submit";//reset the name after update as button as submit
+
+        cancelbtn.style.display="none"//after update remove the cancel button
+
 
         
     } else {
@@ -65,8 +69,8 @@ userform.addEventListener("submit", function (event) {
         <td>${userdetails.education}</td>
         <td>${userdetails.address}</td>
         <td>
-        <button onClick="deleterow(this)">Delete</button>
-        <button onClick="edit(this)">Edit</button>
+        <button onClick="edit(this)" id="ebtn">Edit</button>
+        <button onClick="deleterow(this)" id="delbtn">Delete</button>
         </td>
         `;
     }
@@ -92,22 +96,7 @@ function updateserial() {
     })
 }
 
-// function edit(button) {
-//     currentRow = button.closest("tr");
-//     currentRow.style.backgroundColor="green";
-//     let cells = currentRow.cells;
-//     userform.elements["name"].value = cells[1].innerText;
-//     userform.elements["email"].value = cells[2].innerText;
-//     userform.elements["phonenum"].value = cells[3].innerText;
-//     userform.elements["dob"].value = cells[4].innerText;
-//     userform.elements["gender"].value = cells[5].innerText;
-//     let hobbies = cells[6].innerText.split(",");
-//     userform.elements["hobbies"].forEach(hobby => {
-//         hobby.checked = hobbies.includes(hobby.value);
-//     });
-//     userform.elements["education"].value = cells[7].innerText;
-//     userform.elements["address"].value = cells[8].innerText;
-// }
+
 
 
 
@@ -152,7 +141,6 @@ function edit(button) {
 cancelbtn.addEventListener("click",function(){
 if(currentRow){
     currentRow.style.backgroundColor=""; //change the row colur to default color 
-
     currentRow=null; //reset the current row to null
 }
   
